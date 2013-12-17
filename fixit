@@ -83,6 +83,9 @@ while(<>)
     elsif ( $obj =~ /^"/ )
     {
 	# Literal
+
+	# remove NUL character
+	$obj =~ s/\x00//g ;
     }
     else # prefixed name
     {
