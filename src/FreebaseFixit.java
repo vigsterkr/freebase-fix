@@ -104,19 +104,19 @@ class FreebaseFixit {
 	 	return uri;
 	}
 
-	private String fixSubject(String subj) {
+	public String fixSubject(String subj) {
 		String fixedSubject = fixEscaping(subj);
 
 		return fixedSubject;
 	}
 
-	private String fixPredicate(String pred) {
+	public String fixPredicate(String pred) {
 		String fixedPredicate = fixEscaping(pred);
 
 		return fixedPredicate;
 	}
 
-	private String fixObject(String obj) {
+	public String fixObject(String obj) {
 		String fixedObject = obj;
 
 		fixedObject = fixURI(fixedObject);
@@ -135,7 +135,7 @@ class FreebaseFixit {
 		return cleanObj;
 	}
 
-	private String fixTriplet(String tripletLine) throws Exception {
+	public String fixTriplet(String tripletLine) throws Exception {
 		List<String> triplet = splitToTriplet(tripletLine);
 		if (triplet.isEmpty())
 			throw new Exception("ERROR: Failed to parse the line");
